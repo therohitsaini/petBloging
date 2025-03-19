@@ -31,7 +31,7 @@ function HeroSection() {
       >
         <SwiperSlide>
           <div>
-           <img className='h-[500px] w-full object-cover' src='../src/assets/2148345897.jpg' />
+           <img className='h-[500px] w-full object-cover' src='"../src/assets/img-with.png"' />
            <div className='man absolute top-2 w-full h-[480px] border border-red-600 flex items-center justify-center border-none flex-col'>
             {/* <h1 className='font-semibold text-4xl w-[500px] text-center text-cyan-500'>Experienced staff ensuring safety and happiness always.</h1> */}
             {/* <button className=' border border-white px-10 py-2  font-semibold text-xl rounded-md text-white'>Submit</button> */}
