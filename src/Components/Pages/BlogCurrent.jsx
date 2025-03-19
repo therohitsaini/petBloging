@@ -8,7 +8,7 @@ function BlogCurrent() {
         <>
             <div className='Card-main border border-black w-full px-20 mt-10  mb-10 bg-slate-100 py-5 border-none'>
                 <h1 className='text-xl font-semibold mb-2'>Learan Current...</h1>
-                <div className='grid grid-cols-3 gap-5 bg-gray-200'>
+                <div className='grid grid-cols-4 gap-5 bg-gray-200'>
               {
                 newCardData.map((data) =>{
                     return (
