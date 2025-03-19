@@ -15,7 +15,7 @@ function Navbar() {
             <ul className="un-order-list flex gap-14  max-sm:hidden font-medium" >
               <li><a className='' href="#">ABOUT</a></li>
               <li><a href="#" >SERVICE</a></li>
-              <li><a href="#">ACCESSORIES</a></li>
+              <li><a href="#">BLOGS</a></li>
            
           
             </ul>
