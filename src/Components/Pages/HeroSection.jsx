@@ -31,7 +31,7 @@ function HeroSection() {
       >
         <SwiperSlide>
           <div>
-           <img className='h-[500px] w-full object-cover' src='"https://img.freepik.com/free-photo/girl-with-dog_1303-4604.jpg?t=st=1742399081~exp=1742402681~hmac=d6c6e006cefa16d35d0a876bd0ceec0d13df879cb7bf5c5266d5e17b593827b0&w=1380"' />
+           <img className='h-[500px] w-full object-cover' src="../public/dog wit girl.jpg" />
            <div className='man absolute top-2 w-full h-[480px] border border-red-600 flex items-center justify-center border-none flex-col'>
             {/* <h1 className='font-semibold text-4xl w-[500px] text-center text-cyan-500'>Experienced staff ensuring safety and happiness always.</h1> */}
             {/* <button className=' border border-white px-10 py-2  font-semibold text-xl rounded-md text-white'>Submit</button> */}

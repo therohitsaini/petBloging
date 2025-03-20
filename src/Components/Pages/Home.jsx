@@ -10,7 +10,7 @@ function Home() {
   return (
     <div className='home-main'>
          <Navbar /> 
-         {/* <HeroSection />y */}
+         <HeroSection />y
         <Blog />
         <BlogCurrent />
         <Footer /> 
