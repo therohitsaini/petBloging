@@ -10,11 +10,10 @@ function Home() {
   return (
     <div className='home-main'>
          <Navbar /> 
-         <HeroSection />y
+         {/* <HeroSection /> */}
         <Blog />
         <BlogCurrent />
         <Footer /> 
-        {/* <PetDetails /> */}
 
     </div>
   )
