@@ -7,7 +7,7 @@ function FormComp() {
 const navigate = useNavigate()
     const alertHandler = () =>{
 alert("From Sucessfully Submit")
-navigate("/home")
+navigate("/home/")
     }
     return (
         <div className='form-main w-full h-screen flex'>
