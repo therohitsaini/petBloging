@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-function FormComp() {
-    const [isHideShow, setIsHideShow] = useState(true)
+function Login() {
+    const [isHideShow, setIsHideShow] = useState(false)
 
 
     return (
@@ -43,7 +43,7 @@ function FormComp() {
                                 <input type='checkbox' className=' h-4 w-4' />
                                 <p>I accept to the terms and condition and i agree to the of privecy policy </p>
                             </div>
-                            <div className='btn mt-3'> <Link to={"/login/"} > <button
+                            <div className='btn mt-3'> <Link to={"/home"} > <button
                             // onClick={alertHandler}
 
                              className='p-2 bg-green-600 hover:bg-black px-10 text-base text-white rounded-md font-bold'>Submit</button> </Link> </div>
@@ -69,7 +69,9 @@ function FormComp() {
                                 <Link to={"forgetpassword"} >Forgot Password</Link>
                             </p>
                             <div className='btn w-96 '>
+                                <Link to={"/home"}>
                              <button className='hover:bg-black bg-green-600 w-full py-2 text-white text-base rounded-md'>Sign in </button> 
+                             </Link>
                             </div>
 
                         </form>
@@ -84,4 +86,4 @@ function FormComp() {
     )
 }
 
-export default FormComp
+export default Login

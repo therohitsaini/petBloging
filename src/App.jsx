@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormComp from './Components/FormComp/FormComp';
 import ForgetPassword from './Components/FormComp/ForgetPassword';
 import AddnewPassword from './Components/FormComp/AddnewPasswoed';
+import Login from './Components/FormComp/Longin';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,9 @@ function App() {
           <Route path='/' element={<FormComp />} />
           <Route path='/forgetpassword' element={ <ForgetPassword />} />
           <Route path='/addnewpassword' element={ <AddnewPassword />} />
+          <Route path='/login' element={ <Login />} />
+
+
           <Route path='/home' element={<Home />} />
           <Route path='/about' />
           <Route path='/accessories' />
