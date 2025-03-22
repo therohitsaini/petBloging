@@ -4,11 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 function FormComp() {
     const [isHideShow, setIsHideShow] = useState(true)
 
-const navigate = useNavigate()
-    const alertHandler = () =>{
-alert("From Sucessfully Submit")
-navigate("/home/")
-    }
+// const navigate = useNavigate()
+//     const alertHandler = () =>{
+// alert("From Sucessfully Submit")
+// navigate("/home/")
+//     }
     return (
         <div className='form-main w-full h-screen flex'>
             <div className='image   w-[40%]  h-screen'>
@@ -47,9 +47,10 @@ navigate("/home/")
                                 <input type='checkbox' className=' h-4 w-4' />
                                 <p>I accept to the terms and condition and i agree to the of privecy policy </p>
                             </div>
-                            <div className='btn mt-3'><button
-                            onClick={alertHandler}
-                             className='p-2 bg-green-600 hover:bg-black px-10 text-base text-white rounded-md font-bold'>Submit</button> </div>
+                            <div className='btn mt-3'> <Link to={"/home"} > <button
+                            // onClick={alertHandler}
+
+                             className='p-2 bg-green-600 hover:bg-black px-10 text-base text-white rounded-md font-bold'>Submit</button> </Link> </div>
                         </form>
                         </div>
                     </div>
