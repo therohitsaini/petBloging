@@ -23,8 +23,6 @@ function Header() {
     return (
         <div>
             <div className='main flex flex-col justify-center px-35 max-sm:px-2 min-2xl:px-80 min-2xl:py-20 min-2xl:text-2xl'>
-
-
                 <div className='z-30 gap-4 relative w-full flex flex-col rounded-lg shadow-lg mt-12 my-6 bg-white opacity-95 py-10'>
                     <div className=''>
                         <div className='max-sm:w-full rounded-lg flex items-center justify-around gap-4 px-10 pt-5 min-2xl:pt-10 bg-white w-fit max-sm:flex'>
