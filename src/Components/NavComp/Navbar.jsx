@@ -14,11 +14,11 @@ function Navbar() {
           <nav className="navbar flex justify-between items-center    p-2 py-4  border-b border-slate-300 max-sm:py-4 text-black">
             <h1 className="font-semibold text-2xl flex items-center gap-1 "><Icon width={42} icon={"solar:cat-outline"} className='text-4xl' /> <Link to={"/home"}>Petpy.in </Link> </h1>
             <ul className="un-order-list flex gap-14  max-sm:hidden font-medium" >
-            <li><a className='/home' href="/home">HOME</a></li>
-              <li><a className='' href="petfinding">ABOUT</a></li>
-              <li><a href="#" >SERVICE</a></li>
-              <li><a href="/blogs">BLOGS</a></li>
-              <li><a href="/petfinding">ADOPTION</a></li>
+            <li><Link  to={"/home"}>HOME</Link></li>
+              <li><Link  to={"/petfinding"}>ABOUT</Link></li>
+              <li><Link to={"/home"} >SERVICE</Link></li>
+              <li><Link to={"/blogs"}>BLOGS</Link></li>
+              <li><Link to={"/petfinding"}>ADOPTION</Link></li>
 
            
           
