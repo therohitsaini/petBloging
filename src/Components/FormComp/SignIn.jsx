@@ -70,9 +70,9 @@ function SignIn() {
                             <p className='w-96 flex justify-end  text-blue-500 font-serif underline  max-sm:w-full'>
                                 <Link to={"/forgetpassword"} >Forgot Password</Link>
                             </p>
-                            <div className='btn w-96  max-sm:w-full'>
-                                <Link to={"/home"}>
-                             <button className='hover:bg-black bg-green-600 w-full py-2 text-white text-base rounded-md'>Sign in </button> 
+                            <div className='btn w-96  max-sm:w-full rounded-md border-green-600'>
+                                <Link to={"/home"} className='rounded-md'>
+                             <button className='hover:bg-black bg-green-600 w-full py-2 text-white text-base rounded-md '>Sign in </button> 
                              </Link>
                             </div>
 
