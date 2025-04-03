@@ -30,20 +30,20 @@ function HeroSection() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div>
-           <img className='h-[500px] w-full object-cover' src="../public/dog wit girl.jpg" />
+          {/* <div> */}
+           <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src="../public/dog wit girl.jpg" />
            <div className='man absolute top-2 w-full h-[480px] border border-red-600 flex items-center justify-center border-none flex-col'>
             {/* <h1 className='font-semibold text-4xl w-[500px] text-center text-cyan-500'>Experienced staff ensuring safety and happiness always.</h1> */}
             {/* <button className=' border border-white px-10 py-2  font-semibold text-xl rounded-md text-white'>Submit</button> */}
           </div> 
-           </div>
+           {/* </div> */}
         
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover' src='../src/assets/dog wit girl.jpg' />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src='https://img.freepik.com/premium-photo/portrait-young-woman-looking-away_1048944-2461624.jpg?uid=R167309508&ga=GA1.1.1966480882.1738846517&semt=ais_hybrid' />
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover' src='../src/assets/red-cat-dog-sitting-grass-with-daisies.jpg' />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src='https://img.freepik.com/free-photo/girl-forest_1157-7054.jpg?uid=R167309508&ga=GA1.1.1966480882.1738846517&semt=ais_hybrid' />
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover' src='../src/assets/view-cats-dogs-being-friends.jpg' />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src='../src/assets/view-cats-dogs-being-friends.jpg' />
         </SwiperSlide>
 
       </Swiper>

@@ -6,7 +6,7 @@ function PetDetails() {
     return (
         <div className='PetForm_details w-full h-screen flex  '>
             <div className='w-[50%]'>
-                <img className='h-full w-full object-cover' src='../src/assets/kitty.jpg' alt='not found' />
+                <img className='h-full w-full object-cover' src='https://img.freepik.com/free-photo/cheerful-young-woman-loving-her-tabby-cat-garden_23-2148045687.jpg?uid=R167309508&ga=GA1.1.1966480882.1738846517&semt=ais_hybrid' alt='not found' />
             </div>
             <div className=' w-[50%] px-10 flex flex-col justify-center'>
                 <h1 className='font-semibold text-3xl w-full bg-amber-50 py-1 px-2 rounded-md mb-4'>Pet Information</h1>
@@ -64,61 +64,40 @@ function PetDetails() {
                     </div>
                 </form> 
                 :
-                <form className='form2nd  flex flex-col gap-3 px-2 '>
+                <form className='form2nd  flex flex-col gap-5 px-2 '>
                 <div className='flex gap-2'>
-                    <label className='flex flex-col w-full  '>
+                    <label className='flex flex-col w-full gap-1 font-semibold'>
                         <label for="text">Medication Name</label>
                         <input type='text' className='flex flex-col border border-black w-full  p-2 rounded-md' />
                     </label>
-                    <label className='flex flex-col w-full  '>
+                    <label className='flex flex-col w-full gap-1 font-semibold'>
                         <label for="text">Description</label>
                         <input type='text' className='w-full  p-2 border border-black rounded-md ' />
                     </label>
-                    <label className='flex flex-col w-full '>
-                        <label for="text">Time</label>
+                    <label className='flex flex-col w-full gap-1  '>
+                        <label for="text" className='font-semibold'>Time</label>
                         <select className=' p-2 border border-black rounded-md' >
                             <option>AM</option>
                             <option>PM</option>
 
                         </select>
                     </label>
-                    <label className='flex flex-col w-full '>
-                        <label for="text">Dosage </label>
+                    <label className='flex flex-col w-full gap-1 font-semibold '>
+                        <label for="text" >Dosage </label>
                         <input type='text' className='w-full p-2  border border-black rounded-md' />
                     </label>
                 </div>
 
-                <div className='flex gap-2'>
-                    <label className='flex flex-col w-full  '>
-                        <label for="text">Medication Name</label>
-                        <input type='text' className='flex flex-col border border-black w-full  p-2 rounded-md' />
-                    </label>
-                    <label className='flex flex-col w-full  '>
-                        <label for="text">Description</label>
-                        <input type='text' className='w-full  p-2 border border-black  rounded-md' />
-                    </label>
-                    <label className='flex flex-col w-full '>
-                        <label for="text">Time</label>
-                        <select className=' p-2 border border-black rounded-md' >
-                            <option>AM</option>
-                            <option>PM</option>
-
-                        </select>
-                    </label>
-                    <label className='flex flex-col w-full '>
-                        <label for="text">Dosage </label>
-                        <input type='text' className='w-full p-2  border border-black rounded-md' />
-                    </label>
-                </div>
+           
 
                 <section className='flex  flex-col gap-2 '>
-                    <h1 className='font-semibold text-xl'>Does the pet have vaccinations? Please indicate the name of the vaccines and when did it received it</h1>
+                    <h1 className='font-semibold text-[17px] text-slate-500'>Does the pet have vaccinations? Please indicate the name of the vaccines and when did it received it</h1>
                     <div className='flex gap-2'>
-                        <label className='flex flex-col w-full  '>
+                        <label className='flex flex-col w-full  font-semibold gap-1'>
                             <label for="text">Vaccine Name</label>
                             <input type='text' className='flex flex-col border border-black w-full  p-2 rounded-md' />
                         </label>
-                        <label className='flex flex-col w-full  '>
+                        <label className='flex flex-col w-full font-semibold gap-1 '>
                             <label for="text">Year</label>
                             <select itemType='number' className=' p-2 border border-black rounded-md' >
 
@@ -127,34 +106,25 @@ function PetDetails() {
                         </label>
                     </div>
 
-                    <div className='flex gap-2'>
-                        <label className='flex flex-col w-full  '>
-                            <label for="text">Vaccine Name</label>
-                            <input type='text' className='flex flex-col border border-black w-full  p-2 rounded-md' />
-                        </label>
-                        <label className='flex flex-col w-full  '>
-                            <label for="text">Year</label>
-                            <select itemType='number' className=' p-2 border border-black rounded-md' >
-
-
-                            </select>
-                        </label>
-                    </div>
+                 
                 </section>
 
-                <section>
-                    <h1>Does the pet have vaccinations? Please indicate the name of the vaccines and when did it received it</h1>
+                <section className='flex flex-col gap-3'>
+                    <h1 className='font-semibold text-[17px] text-slate-500'>Does the pet have vaccinations? Please indicate the name of the vaccines and when did it received it</h1>
                     <div className='flex gap-2'>
-                        <label className='flex flex-col w-full  '>
+                        <label className='flex flex-col w-full font-semibold  gap-1'>
                             <label for="text">Medication Name</label>
                             <input type='text' className='flex flex-col border border-black w-full  p-2 rounded-md' />
                         </label>
-                        <label className='flex flex-col w-full  '>
+                     
+                    </div>
+                    <div className='flex gap-2'>
+                    <label className='flex flex-col w-full font-semibold  gap-1'>
                             <label for="text">Description</label>
                             <input type='text' className='w-full  p-2 border border-black  rounded-md' />
                         </label>
 
-                        <label className='flex flex-col w-full '>
+                        <label className='flex flex-col w-full font-semibold gap-1'>
                             <label for="text">Dosage </label>
                             <input type='text' className='w-full p-2  border border-black rounded-md' />
                         </label>
@@ -166,15 +136,7 @@ function PetDetails() {
 
             </form> 
                  }
-                      
-
-                  
                 
-            
-
-       
-
-
             </div>
 
 

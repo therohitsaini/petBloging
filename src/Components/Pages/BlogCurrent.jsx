@@ -1,17 +1,24 @@
 import React from 'react'
 import CurrentBlog from "../Data/BlogData.json/"
+import { Link } from 'react-router-dom'
 
 const newCardData = CurrentBlog.CurrentBlog
 
 function BlogCurrent() {
     return (
         <>
-            <div className='Card-main border border-black w-full px-20 mt-10  mb-10 bg-slate-100 py-5 border-none'>
-                <h1 className='text-xl font-semibold mb-2'>Learan Current...</h1>
-                <div className='grid grid-cols-4 gap-5 bg-gray-200'>
+            <div className='Card-main w-full px-20 mt-10  mb-10 bg-slate-100 py-5 border-none max-sm:px-2'>
+                <div className='flex text-xl font-semibold py-3 justify-between'>
+                <h1 className='text-2xl font-semibold'>Learan Current...</h1>
+                <Link to={"/blogs"}>
+                <button className='text-white bg-green-700 p-2 cursor-pointer'>View More..</button>
+                </Link>
+                </div>
+                <div className='grid grid-cols-4 gap-5 bg-gray-200 max-sm:grid-cols-1'>
                     {
                         newCardData.map((data) => {
                             return (
+                                <Link to={"/blogdetails"}>
                                 <section className='card-data bg-white shadow-xl transition-transform hover:shadow-2xl hover:translate-x-1 duration-400'>
                                     <div className='h-72'>
                                         <img className='h-full w-full object-cover ' src={data.img} />
@@ -25,6 +32,7 @@ function BlogCurrent() {
 
                                     </div>
                                 </section>
+                                </Link>
                             )
                         })
                     }

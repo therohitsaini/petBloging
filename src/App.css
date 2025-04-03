@@ -1,5 +1,19 @@
-/* .bg-img{
-    background-image: url("../src/assets/selective-focus-shot-adorable-weimaraner-dog-outdoors-daylight_181624-59028.jpg");
-    background-size: 100% 100%;
-    object-fit:fill;
-} */
+html{
+    scroll-behavior: auto;
+}
+.main {
+    background-image: url(../public/WhatsApp\ Image\ 2025-04-02\ at\ 12.19.45_51838481.jpg);
+    background-size: 100%;
+}
+.dogfood{
+    background-image: url(../public/WhatsApp\ Image\ 2025-04-02\ at\ 13.04.24_6a24cd23.jpg);
+    background-size: 100%;
+}
+.dognofood{
+    background-image: url(../public/WhatsApp\ Image\ 2025-04-02\ at\ 13.04.17_bf760103.jpg);
+    background-size: 100%;
+}
+.btn:hover{
+    background-color: rgb(4, 51, 4);
+    
+}
