@@ -20,7 +20,6 @@ function Navbar() {
               <li><Link to={"/blogs"}>BLOGS</Link></li>
               <li><Link to={"/petfinding"}>ADOPTION</Link></li>
 
-           
           
             </ul>
             <div className='flex items-center gap-10'>
