@@ -4,8 +4,8 @@ import React from 'react'
 function Tips() {
     return (
         <div>
-            <div className='min-2xl:px-60 px-20 py-5 flex gap-2 min-2xl:gap-15 w-full h-full max-sm:flex max-sm:flex-col max-sm:w-full max-sm:px-5'>
-                <div className='border-1 border-slate-300 flex  flex-col gap-10 rounded-lg w-full min-2xl:w-[2000px] bg-white py-8 px-7 max-sm:px-4'>
+            <div className='max-2xl:px-60 xl:px-15 md:px-15 px-1 py-5 flex gap-2 min-2xl:gap-15 w-full h-full max-sm:flex max-sm:flex-col max-sm:w-full max-sm:px-5'>
+                <div className='border-1 border-slate-300 flex  flex-col gap-6 rounded-lg w-full min-2xl:w-[2000px] bg-white py-8 px-7 max-sm:px-4'>
                     <p className='text-3xl font-semibold'>
                     Service for every dog and cat
                     </p>
@@ -89,7 +89,7 @@ function Tips() {
 
                 <div className=' flex flex-col rounded-lg gap-5 justify-between w-full bg-white max-sm:h-full'>
                     <div className='relative'>
-                        <img className="object-fit h-[45rem] max-sm:h-full w-full rounded-lg" src={`${import.meta.env.BASE_URL}WhatsApp Image 2025-04-02 at 13.04.44_ed1530e4.jpg`} alt="" />
+                        <img className="object-fit h-[46rem] max-sm:h-full w-full rounded-lg" src={`${import.meta.env.BASE_URL}WhatsApp Image 2025-04-02 at 13.04.44_ed1530e4.jpg`} alt="" />
                     <div className='absolute -top-5 max-sm:-top-1 h-full flex flex-col justify-between p-2'>
                     <div className=' p-5 max-sm:p-1'>
                         <p className='text-white flex flex-col gap-4  max-sm:gap-1'><span className='flex flex-col '><span className='text-8xl max-sm:text-5xl font-extrabold text-green-900'>Trusted</span> <span className='text-8xl max-sm:text-5xl font-extrabold text-green-900'> cat care</span></span><span className='text-7xl max-sm:text-4xl font-bold'> Feeding,</span><span className='text-6xl max-sm:text-4xl font-bold'> Grooming,</span><span className='text-5xl max-sm:text-3xl font-bold max-sm:font-semibold'> Health monitoring.</span></p>
