@@ -46,7 +46,7 @@ function Navbar() {
           <nav className='flex justify-between items-center max-sm:hidden'>
             <ul className='flex gap-10 font-semibold text-md p-3 '>
                 <li>Nutrition</li>
-                <li>Trainig</li>
+                <li>Training</li>
                 <li>Parenting</li>
                 <li>Health</li>
                 <li>Wellness</li>
