@@ -250,7 +250,8 @@ function BlogDetails() {
                     </div>
                     <div className='flex p-2 border-1 border-slate-300 gap-2'>
                         <div>
-                            <img className=' w-35' src="../public/blog-1.avif"  alt="" />
+                        <img className=' w-35' src={`${import.meta.env.BASE_URL}blog-1[1].avif`}  alt="" />
+
                         </div>
                         <div className='flex flex-col gap-4'>
                             <p className='text-[15px] font-bold'>
