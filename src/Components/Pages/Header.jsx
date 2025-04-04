@@ -22,10 +22,10 @@ function Header() {
 
     return (
         <div>
-            <div className='main flex flex-col   min-2xl:text-2xl'>
-                <img className='object-fill w-full' src={`${import.meta.env.BASE_URL}cat-bg.jpg`} />
-                <div className='w-full px-40 absolute'>
-                <div className='z-30 top-50 relative gap-4 w-full flex flex-col rounded-lg shadow-lg  bg-white opacity-95 py-10'>
+            <div className='main flex flex-col   min-2xl:text-2xl '>
+                <img className='object-fill w-full h-[650px]' src={`${import.meta.env.BASE_URL}cat-bg.jpg`} />
+                <div className='w-full px-40 absolute '>
+                <div className='z-30 top-20 relative gap-4 w-full flex flex-col rounded-lg shadow-lg  bg-white opacity-95 py-10'>
                     
                         <div className=''>
                             <div className='max-sm:w-full rounded-lg flex items-center justify-around gap-4 px-10 pt-5 min-2xl:pt-10 bg-white w-fit max-sm:flex'>
