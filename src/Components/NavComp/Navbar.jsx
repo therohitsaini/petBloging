@@ -10,7 +10,7 @@ function Navbar() {
     return (
       <>
    
-        <header className="header w-full sticky top-0 px-20 bg-slate-200 max-sm:px-2 z-50  ">
+        <header className="header w-full sticky top-0 px-20 bg-slate-100 max-sm:px-2 z-50  ">
           <nav className="navbar flex justify-between items-center    p-2 py-4  border-b border-slate-300 max-sm:py-4 text-black">
             <h1 className="font-semibold text-2xl flex items-center gap-1 "><Icon width={42} icon={"solar:cat-outline"} className='text-4xl' /> <Link to={"/home"}>Petpy.in </Link> </h1>
             <ul className="un-order-list flex gap-14  max-sm:hidden font-medium" >
