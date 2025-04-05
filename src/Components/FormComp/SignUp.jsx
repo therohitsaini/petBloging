@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function SignUp() {
+const [formData, setFormData] = useState({})
+
+    const firstName = useRef("")
+    const lastName = useRef("")
+    const email = useRef("")
+    const password = useRef("")
+const SignUpSubmitHanlder = (e) =>{
+    e.preventDefault()
+    const object = {
+        firstName : firstName.current.value,
+        lastName : lastName.current.value ,
+        email : email.current.value ,
+        password : password.current.value
+    }
+    try{
+        const url = 'api/registration'
+
+    }catch(err){
+        console.log("Something Went Wrong ..! ",err)
+    }
+
+}
+console.log(formData)
     return (
         <div className='form-main w-full h-screen flex'>
             <div className='image   w-[40%]  h-screen max-sm:hidden'>
@@ -16,23 +39,23 @@ function SignUp() {
                         <form className='form  mt-20 flex flex-col gap-3 max-sm:mt-3 max-sm:gap-0 '>
                             <label className='flex gap-3 max-sm:flex-col'>
                                 <label className='flex flex-col w-full gap-1 max-sm:gap-0'>
-                                    <label for="text" className=' font-semibold text-[18px]' >UserName</label>
-                                    <input type='text' className='p-2 border-2 border-black rounded-md ' placeholder='Enter username' />
+                                    <label for="text" className=' font-semibold text-[18px] ' >First Name</label>
+                                    <input ref={firstName} type='text' className='p-2 border-2 border-black rounded-md ' placeholder='Enter username' />
                                 </label>
                                 <label className='flex flex-col w-full gap-1  max-sm:gap-0'>
-                                    <label for="text" className='font-semibold text-[18px]' >Full Name</label>
-                                    <input type='text' className='p-2 w-full border-2 border-black rounded-md ' placeholder='Enter full name' />
+                                    <label for="text" className='font-semibold text-[18px]' >Last Name</label>
+                                    <input ref={lastName}  type='text' className='p-2 w-full border-2 border-black rounded-md ' placeholder='Enter full name' />
                                 </label>
                             </label>
 
                             <label className='flex gap-3 mt-2  max-sm:flex-col'>
                                 <label className='flex flex-col w-full gap-1  max-sm:gap-0'>
                                     <label for="text" className='font-semibold text-[18px] ' >Email Address</label>
-                                    <input type='text' className='p-2 border-2 border-black rounded-md' placeholder='Enter email address' />
+                                    <input ref={email}  type='text' className='p-2 border-2 border-black rounded-md' placeholder='Enter email address' />
                                 </label>
                                 <label className='flex flex-col w-full gap-1  max-sm:gap-0'>
                                     <label for="text" className='font-semibold text-[18px] ' >Password</label>
-                                    <input type='text' className='p-2 w-full  border-2 border-black rounded-md' placeholder='Enter password' />
+                                    <input ref={password}  type='text' className='p-2 w-full  border-2 border-black rounded-md' placeholder='Enter password' />
                                 </label>
                             </label>
 
@@ -41,9 +64,11 @@ function SignUp() {
                                 <p className='max-sm:text-sm '>I accept to the terms and condition and i agree to the of privecy policy </p>
                             </div>
                             <div className='btn-sign-up mt-3 '>
-                                <Link to={"/signin"} >
-                                    <button className='p-2 bg-green-600 border  hover:bg-black px-20 text-base text-white rounded-md font-bold'>Submit</button>
-                                </Link>
+                                {/* <Link to={"/signin"} > */}
+                                    <button 
+                                    onClick={SignUpSubmitHanlder}
+                                     className='p-2 bg-green-600 border  hover:bg-black px-20 text-base text-white rounded-md font-bold'>Submit</button>
+                                {/* </Link> */}
                             </div>
                         </form>
                     </div>

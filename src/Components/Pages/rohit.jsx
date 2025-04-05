@@ -104,7 +104,7 @@ function Header() {
 
                             <div className='flex justify-center items-center gap-4'>
                                 <div className='dogfood h-15 w-15 max-sm:h-12 max-sm:w-12 flex justify-center items-center'>
-                                    <img src={`${import.meta.env.BASE_URL}WhatsApp Image 2025-04-02 at 13.04.24_6a24cd23.jpg`} ></img>
+                                    <img src={`${import.meta.env.BASE_URL}../public/WhatsApp\ Image\ 2025-04-02\ at\ 13.04.24_6a24cd23.jpg`} ></img>
 
                                 </div>
                                 <p className=' flex justify-center text-center text-lg max-sm:text-sm font-semibold'>Price With Suplies</p>
@@ -121,7 +121,7 @@ function Header() {
 
                             <div className='flex justify-center items-center gap-4'>
                                 <div className='dognofood h-15 w-15 max-sm:h-12 max-sm:w-12 flex justify-center items-center'>
-                                    <img src={`${import.meta.env.BASE_URL}WhatsApp Image 2025-04-02 at 13.04.17_bf760103.jpg`} ></img>
+                                    <img src={`${import.meta.env.BASE_URL}../public/WhatsApp\ Image\ 2025-04-02\ at\ 13.04.17_bf760103.jpg`} ></img>
                                 </div>
                                 <p className=' flex justify-center text-center text-lg max-sm:text-sm font-semibold'>Price Without Suplies</p>
                             </div>
