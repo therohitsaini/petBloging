@@ -10,8 +10,8 @@ function Adoptive() {
           <Icon width={15} className='text-black border-1 font-extrabold max-sm:hidden' icon={"weui:arrow-filled"} style={{ marginTop: "4px", color: "", }} />
         </p>
       </div>
-      <Link to={"/petfinding"} >
-        <div className='grid grid-cols-4 max-sm:flex max-sm:flex-col gap-7 max-h-full border-red-600 py-10'>
+<Link to={"/petfinding"}>
+      <div className='grid grid-cols-4 max-sm:flex max-sm:flex-col gap-7 max-h-full border-red-600 py-10'>
 
           <div className='h-full border-2 border-slate-100 rounde-lg hover:border-2 hover:rounded-lg hover:border-green-800 shadow-lg'>
 
@@ -51,14 +51,14 @@ function Adoptive() {
           </div>
 
 
-          <Link to={"/petfinding"}>
-            <div className='h-full border-2 border-slate-100 rounde-lg shadow-2xl '>
-              <div className='rounded-t-lg h-80 w-full bg-green-600 flex flex-col items-center justify-center gap-5'>
-                <Icon icon={"meteor-icons:paw"} fontSize={80} color='white' />
-                <p className='font-semibold text-white text-md px-10 text-center'>7 more pet availble for Petfinder</p>
-              </div>
-              <div className=''>
-                <div className='felx justify-center items-center rounded-b-lg bg-green-800 text-center border-1 py-5  hover:bg-green-950'>
+        <Link to={"/petfinding"}>
+          <div className='h-full border-2 border-slate-100 rounde-lg shadow-2xl '>
+            <div className='rounded-t-lg h-80 w-full bg-green-600 flex flex-col items-center justify-center gap-5'>
+              <Icon icon={"meteor-icons:paw"} fontSize={80} color='white'/>
+              <p className='font-semibold text-white text-md px-10 text-center'>7 more pet availble for Petfinder</p>
+            </div>
+            <div className=''>
+              <div className='felx justify-center items-center rounded-b-lg bg-green-800 text-center border-1 py-5  hover:bg-green-950'>
 
                   <p className='text-xl font-semibold text-white'>MEET THEM</p>
                 </div>
