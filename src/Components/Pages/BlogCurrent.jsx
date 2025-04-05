@@ -10,7 +10,7 @@ function BlogCurrent() {
             <div className='Card-main w-full px-20 mt-10  mb-10 bg-slate-100 py-5 border-none max-sm:px-2'>
                 <div className='flex text-xl font-semibold py-3 justify-between'>
                 <h1 className='text-2xl font-semibold'>Learan Current...</h1>
-                <Link to={"/blogs"}>
+                <Link to={"/blogs"} onClick={() => window.scrollTo(0,0)}>
                 <button className='text-white bg-green-700 p-2 cursor-pointer'>View More..</button>
                 </Link>
                 </div>

@@ -10,7 +10,7 @@ function Adoptive() {
           <Icon width={15} className='text-black border-1 font-extrabold max-sm:hidden' icon={"weui:arrow-filled"} style={{ marginTop: "4px", color: "", }} />
         </p>
       </div>
-<Link to={"/petfinding"}>
+<Link to={"/petfinding"} onClick={ () => window.scrollTo(0,0)}>
       <div className='grid grid-cols-4 max-sm:flex max-sm:flex-col gap-7 max-h-full border-red-600 py-10'>
 
           <div className='h-full border-2 border-slate-100 rounde-lg hover:border-2 hover:rounded-lg hover:border-green-800 shadow-lg'>
