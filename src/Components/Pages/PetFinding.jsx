@@ -11,7 +11,7 @@ function PetFinding() {
     return (
         <>
             <Navbar />
-            {/* <HeroSection /> */}
+            <HeroSection />
             <div className='px-20 bg-slate-100 mt-15 py-3 max-sm:px-4'>
                 <div className='felx justify-center'>
                     <p className='text-4xl text-center font-semibold flex justify-center gap-3'>Pets Available For Adoption Nearby....

@@ -39,11 +39,11 @@ function HeroSection() {
            {/* </div> */}
         
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src={`${import.meta.env.BASE_URL}https://img.freepik.com/premium-photo/portrait-young-woman-looking-away_1048944-2461624.jpg?uid=R167309508&ga=GA1.1.1966480882.1738846517&semt=ais_hybrid`} />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src={`${import.meta.env.BASE_URL}adorable-portrait-pet-with-baby-surrounded-by-flowers_23-2151850078.jpg`} />
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src='https://img.freepik.com/free-photo/girl-forest_1157-7054.jpg?uid=R167309508&ga=GA1.1.1966480882.1738846517&semt=ais_hybrid' />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src={`${import.meta.env.BASE_URL}adorable-kid-playing-with-shadows_23-2151335999.jpg`} />
         </SwiperSlide>
-        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src='../src/assets/view-cats-dogs-being-friends.jpg' />
+        <SwiperSlide> <img className='h-[500px] w-full object-cover max-sm:h-[300px]' src={`${import.meta.env.BASE_URL}adorable-portrait-pet-with-baby-surrounded-by-flowers_23-2151850078.jpg`}/>
         </SwiperSlide>
 
       </Swiper>

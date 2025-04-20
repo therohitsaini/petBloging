@@ -10,20 +10,23 @@ function Navbar() {
     return (
       <>
    
-        <header className="header w-full sticky top-0 px-20 bg-slate-100 max-sm:px-2 z-50  ">
+        <header className="header w-full sticky top-0 px-15 bg-slate-100 max-sm:px-2 z-50  ">
           <nav className="navbar flex justify-between items-center    p-2 py-4  border-b border-slate-300 max-sm:py-4 text-black">
             <h1 className="font-semibold text-2xl flex items-center gap-1 "><Icon width={42} icon={"solar:cat-outline"} className='text-4xl' /> <Link to={"/home"}>Petpy.in </Link> </h1>
-            <ul className="un-order-list flex gap-14  max-sm:hidden font-medium text-[17px]" >
-            <li><Link  to={"/home"}>HOME</Link></li>
+            <ul className="un-order-list flex gap-10 items-center  max-sm:hidden font-medium text-[15px]" >
+            <li><Link  to={"/"}>HOME</Link></li>
               <li><Link  to={"/petfinding"}>ABOUT</Link></li>
-              <li><Link to={"/home"} >SERVICE</Link></li>
-              <li><Link to={"/blogs"}>BLOGS</Link></li>
+              <li><Link to={"/"} >SERVICE</Link></li>
+              <li><Link to={"/bloges"}>BLOGS</Link></li>
               <li><Link to={"/petfinding"}>ADOPTION</Link></li>
+              <li><Link to={"/petgrooming"}>PET GROOMING </Link></li>
+              <li className='flex items-center'><Link to={"/signin"}>LOGIN</Link>
+              {/* <Icon fontSize={23}  icon={"oui:arrow-down"}></Icon>  */}
+              </li>
 
-          
             </ul>
             <div className='flex items-center gap-10'>
-            <div className='search-bar border-2 border-black flex  rounded-md  max-sm:hidden'>
+            <div className='search-bar border-2 border-slate-500 flex  rounded-md  max-sm:hidden'>
                 <input className='p-2 w-72 outline-0  border-none max-w-full' type='search' placeholder='ask' />
                 <span className='font-semibold flex items-center border-none  rounded-md px-1 '><Icon width={32}  icon="iconoir:search" /> </span>
               </div>
@@ -41,6 +44,7 @@ function Navbar() {
             <div className="text-3xl">
                 <Icon icon="mage:align-right" /></div>}
                 </div>
+                {/* <button className='p-1.5 px-5 border border-black font-semibold text-[18px]'>Login</button> */}
                 </div>
           </nav>
           <nav className='flex justify-between items-center max-sm:hidden'>

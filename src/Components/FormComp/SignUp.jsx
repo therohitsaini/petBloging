@@ -4,20 +4,29 @@ import { Link } from 'react-router-dom'
 function SignUp() {
 const [formData, setFormData] = useState({})
 
-    const firstName = useRef("")
-    const lastName = useRef("")
+    const firstname = useRef("")
+    const lastname = useRef("")
     const email = useRef("")
     const password = useRef("")
-const SignUpSubmitHanlder = (e) =>{
+const SignUpSubmitHanlder = async (e) =>{
     e.preventDefault()
     const object = {
-        firstName : firstName.current.value,
-        lastName : lastName.current.value ,
+        firstname : firstname.current.value,
+        lastname : lastname.current.value ,
         email : email.current.value ,
         password : password.current.value
     }
     try{
-        const url = 'api/registration'
+        const url = 'http://localhost:8000/api/registration-api/'
+        const fetchData = await fetch(url,{
+            method : "POST",
+            headers : {"Content-type" : "application/json"},
+            body : JSON.stringify(object)
+        })
+        const response = await fetchData.json()
+        alert(JSON.stringify(response))
+        console.log(response)
+
 
     }catch(err){
         console.log("Something Went Wrong ..! ",err)
@@ -31,7 +40,11 @@ console.log(formData)
                 <img className='h-full w-full object-cover' src='https://img.freepik.com/free-vector/cute-cat-meditation-yoga-cartoon-vector-icon-illustration-animal-sport-icon-concept-isolated-flat_138676-8638.jpg?t=st=1742539793~exp=1742543393~hmac=31266f5c00e9b56966f3c4ad7ab1c3c51fe47f7fb51631cf6198239ec5ac95de&w=826' />
             </div>
             <div className=' form  w-[60%]    py-5 px-16 max-sm:px-5 max-sm:py-0 max-sm:w-full '>
-                <div className='w-full font-semibold flex justify-between '><span className='text-2xl'>Petpy.in</span></div>
+                <div className='w-full font-semibold flex justify-between items-center'>
+                    <span className='text-2xl'>Petpy.in</span>
+                    <span className=''>If you have an account <Link to={"/signin"} style={{color : "blue"}}>Sign in</Link></span>
+
+                </div>
 
                 <div className='signUp max-sm:py-2  h-[92%] flex items-center'>
                     <div className=' max-h-full flex flex-col justify-center  w-full  '>
@@ -40,11 +53,11 @@ console.log(formData)
                             <label className='flex gap-3 max-sm:flex-col'>
                                 <label className='flex flex-col w-full gap-1 max-sm:gap-0'>
                                     <label for="text" className=' font-semibold text-[18px] ' >First Name</label>
-                                    <input ref={firstName} type='text' className='p-2 border-2 border-black rounded-md ' placeholder='Enter username' />
+                                    <input ref={firstname} type='text' className='p-2 border-2 border-black rounded-md ' placeholder='Enter username' />
                                 </label>
                                 <label className='flex flex-col w-full gap-1  max-sm:gap-0'>
                                     <label for="text" className='font-semibold text-[18px]' >Last Name</label>
-                                    <input ref={lastName}  type='text' className='p-2 w-full border-2 border-black rounded-md ' placeholder='Enter full name' />
+                                    <input ref={lastname}  type='text' className='p-2 w-full border-2 border-black rounded-md ' placeholder='Enter full name' />
                                 </label>
                             </label>
 
@@ -64,11 +77,11 @@ console.log(formData)
                                 <p className='max-sm:text-sm '>I accept to the terms and condition and i agree to the of privecy policy </p>
                             </div>
                             <div className='btn-sign-up mt-3 '>
-                                <Link to={"/signin"} >
+                                {/* <Link to={"/signin"} > */}
                                     <button 
-                                    // onClick={SignUpSubmitHanlder}
+                                    onClick={SignUpSubmitHanlder}
                                      className='p-2 bg-green-600 border  hover:bg-black px-20 text-base text-white rounded-md font-bold'>Submit</button>
-                                </Link>
+                                {/* </Link> */}
                             </div>
                         </form>
                     </div>

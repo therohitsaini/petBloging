@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import React from 'react'
 import Adoptive from './Adoptive'
-import Blog from './Blog'
+// import Blog from './Blog'
 import Footer from '../NavComp/Footer'
 import Navbar from '../NavComp/Navbar'
 
