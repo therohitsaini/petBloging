@@ -69,11 +69,11 @@ export default function MYStepper() {
       >
         {/* <Typography>{steps[activeStep].label}</Typography> */}
       </Paper>
-      <Box sx={{ height: 390, width: '100%', px: 2, }}>
+      <Box sx={{ height: 400, width: '100%', px: 2, }}>
 
-        {/* <StepContext.Provider handleNext={handleNext}> */}
+        <StepContext.Provider value={{handleNext}}>
           {steps[activeStep].component}
-        {/* </StepContext.Provider> */}
+        </StepContext.Provider>
 
       </Box>
       <MobileStepper
@@ -82,18 +82,26 @@ export default function MYStepper() {
         position="static"
         activeStep={activeStep}
         nextButton={
+          // maxSteps <  ??
           <Button
             color='black'
             size="small"
+           
+            variant='outlined'
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
+            {/* { maxSteps.length < 2 ?? */}
+                Next 
+            
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+
+            
+          
           </Button>
         }
         backButton={

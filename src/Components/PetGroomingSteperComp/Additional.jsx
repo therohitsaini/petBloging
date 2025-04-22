@@ -27,7 +27,7 @@ export default function Additional() {
         <Fragment>
 
             <AnimatedCard className='service  w-full my-5 flex flex-col justify-center h-full gap-4 items-center  px-10'>
-                <h1 className='heading text-2xl font-bold w-full'>Additional Info Required</h1>
+                <h1 className='heading text-3xl font-bold w-full'>Additional Info Required</h1>
                 <form className='w-full flex flex-col gap-4'>
                     <div className='flex gap-2 w-full'>
 

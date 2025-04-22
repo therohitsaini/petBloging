@@ -9,17 +9,17 @@ function AllServiceSection({handleNext}) {
 
     const data = [
         {
-            "icone": "fluent-emoji:dog-face",
+            "icone": `${import.meta.env.BASE_URL}spa bath.avif`,
             "heading": "Spa Bath",
             "price": 899
         },
         {
-            "icone": "fluent-emoji:dog-face",
+           "icone": `${import.meta.env.BASE_URL}spa bath.avif`,
             "heading": "Advanced Grooming",
             "price": 1299
         },
         {
-            "icone": "fluent-emoji:dog-face",
+           "icone": `${import.meta.env.BASE_URL}spa bath.avif`,
             "heading": "Full Service-Master Touch",
             "price": 1499
         }
@@ -31,7 +31,7 @@ function AllServiceSection({handleNext}) {
         <Fragment>
 
             <AnimatedCard className='service  w-full my-5 flex flex-col justify-center h-full gap-4 items-center'>
-                <h1 className='heading text-2xl font-bold w-96'>Service Section</h1>
+                <h1 className='heading text-3xl font-bold w-96'>Service Section</h1>
                 {
                     data.map((item_data, index) => <ServiceCard item_data={item_data} index={index}  handleNext={handleNext}/>)
                 }

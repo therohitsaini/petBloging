@@ -5,55 +5,51 @@ import { Map, Pets, CalendarToday, AccessTime } from "@mui/icons-material";
 
 
 
-
-
-
-
 const Age = [
-    {label: '3 - 6 Months'},
-    {label: '6 Months - 1 Year'},
-    {label: '1 Year - 2 Year'},
-    {label: '2 Year - 3 Year'},
-    {label: '3 Year - 4 Year'},
-    {label: 'More Than 4 Year'},
+    { label: '3 - 6 Months' },
+    { label: '6 Months - 1 Year' },
+    { label: '1 Year - 2 Year' },
+    { label: '2 Year - 3 Year' },
+    { label: '3 Year - 4 Year' },
+    { label: 'More Than 4 Year' },
 ]
 
 
-const MyInput = ({ label = "", helperText = "", type =""  }) =>  {
+const MyInput = ({ label = "", helperText = "", type = "" }) => {
     return <TextField
-    label={label}
-    helperText={helperText}
-    type={type}
+        label={label}
+        helperText={helperText}
+        type={type}
 
-    InputLabelProps={{
-        className: "-mt-2",
-        sx:{fontSize: "1rem"},  // adjust lable font size
-        '& .MuiInputBase-input': {
-            color: 'green'
-        },
-        '& .Muifocused + .MuiFormhelpetText-root': {
-            color: 'blue'
-        },
-    }}
-    FormHelperTextProps={{
-        sx: { color: 'red' }   // helper text style
-    }}
-    inputProps={{
-        sx:{
-            backgroundColor: 'transperent',
-            fontSize: '1rem',
-            height: '40px',
-            padding: '0px',
-        }
-    }}
-    sx={{
-        my: 1.5,   // outer spacing
-        '& .MuiInputBase-input': {
-            color: 'green'
-        },'& .MuiInputLabel-formControl': {
-            padding: '0px'
-        },
-    }}
+        InputLabelProps={{
+            className: "-mt-2",
+            sx: { fontSize: "1rem" },  // adjust lable font size
+            '& .MuiInputBase-input': {
+                color: 'green'
+            },
+            '& .Muifocused + .MuiFormhelpetText-root': {
+                color: 'blue'
+            },
+        }}
+        FormHelperTextProps={{
+            sx: { color: 'red' }   // helper text style
+        }}
+        inputProps={{
+            sx: {
+                backgroundColor: 'transperent',
+                fontSize: '1rem',
+                height: '40px',
+                padding: '0px',
+            }
+        }}
+        sx={{
+            my: 1.5,   // outer spacing
+            '& .MuiInputBase-input': {
+                color: 'green'
+            }, '& .MuiInputLabel-formControl': {
+                padding: '0px'
+            },
+        }}
 
     >
     </TextField>
@@ -142,27 +138,27 @@ function BoardingForm() {
                         </div>
                         <div className=''>
                             <div className='px-5 flex justify-between w-full'>
-                               
+
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="First Name" variant="outlined" size='small'/>
+                                }} id="outlined-basic" label="First Name" variant="outlined" size='small' />
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="Last Name" variant="outlined" size='small'/>
+                                }} id="outlined-basic" label="Last Name" variant="outlined" size='small' />
                             </div>
                             <div className='p-5 flex justify-between w-full '>
                                 <TextField sx={{
-                            
-                                    width: 300,
-                                  
 
-                                }} id="outlined-basic" label="Email Address" variant="outlined" size='small'/>
-                                <TextField sx={{
-                                  
                                     width: 300,
-                                    
-                                    
-                                }} id="outlined-basic" type='number' label="Phone No." variant="outlined" size='small'/>
+
+
+                                }} id="outlined-basic" label="Email Address" variant="outlined" size='small' />
+                                <TextField sx={{
+
+                                    width: 300,
+
+
+                                }} id="outlined-basic" type='number' label="Phone No." variant="outlined" size='small' />
                             </div>
                         </div>
 
@@ -226,27 +222,27 @@ function BoardingForm() {
                         <div>
                             <div className='px-5 justify-between w-full flex gap-5'>
                                 <div className='flex gap-5'>
-                                <div>
-                                 <TextField sx={{
-                                   
-                                }} id="outlined-basic" label="Name Of Pet" variant="outlined" size='small'/>
-                                </div>
-                                <div>
-                                <Autocomplete
-                                    disablePortal
-                                    options={Age}
-                                   sx={{
-                                    minWidth : 200
-                                   }}
-                                    renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' />}
-                                />
-                                </div>
-                                
-                                <div>
-                                 <TextField sx={{
-                                    
-                                }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
-                                </div>
+                                    <div>
+                                        <TextField sx={{
+
+                                        }} id="outlined-basic" label="Name Of Pet" variant="outlined" size='small' />
+                                    </div>
+                                    <div>
+                                        <Autocomplete
+                                            disablePortal
+                                            options={Age}
+                                            sx={{
+                                                minWidth: 200
+                                            }}
+                                            renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' />}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <TextField sx={{
+
+                                        }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +252,7 @@ function BoardingForm() {
                         <Button variant='contained'>Proceed</Button>
                     </div>
 
-            
+
 
 
                 </div>
