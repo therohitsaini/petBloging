@@ -39,7 +39,7 @@ function App() {
           <Route path='/showmoredetails' element={<ShowMoreDetails />} />
           <Route path='/blogdetails' element={<BlogDetails />} />
           <Route path='/petgrooming' element={< PetGrooming />} />
-          <Route path='/petboading' element={< PetBoarding />} />
+          <Route path='/petboarding' element={< PetBoarding />} />
 
         </Routes>
       </BrowserRouter>

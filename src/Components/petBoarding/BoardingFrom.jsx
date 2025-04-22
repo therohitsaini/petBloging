@@ -1,7 +1,10 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { Autocomplete, Avatar, Box, Button, Container, FormControlLabel, Paper, Radio, RadioGroup, TextField, Typography, Card, CardContent, ButtonBase, Modal } from '@mui/material'
 import React, { useState } from 'react'
-import { Map, Pets, CalendarToday, AccessTime } from "@mui/icons-material";
+import { Map, Pets, CalendarToday, AccessTime, Style } from "@mui/icons-material";
+import { AnimatedCard } from '../StyledComponents/Styled';
+import MYStepper from '../PetGroomingSteperComp/Stepper';
+import BoardingStepper from './BoardingStepper.';
 
 
 
@@ -57,7 +60,7 @@ const MyInput = ({ label = "", helperText = "", type = "" }) => {
 
 
 function BoardingForm() {
-
+    const [open, setOpen] = useState(false);
     const [pet, setPet] = useState("Bella");
     const [pickup, setPickup] = useState("");
     const [dropoff, setDropoff] = useState("");
@@ -123,6 +126,15 @@ function BoardingForm() {
         setValue(e.target.value)
     }
     console.log("Value", value)
+
+
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <div>
@@ -249,7 +261,30 @@ function BoardingForm() {
                     </div>
 
                     <div className='flex justify-end p-10'>
-                        <Button variant='contained'>Proceed</Button>
+                        <Button onClick={handleOpen}>Proceed</Button>
+                    </div>
+                    <div>
+                        <Modal sx={{ height: screen, display: 'flex', justifyContent: "center", alignItems: 'center', px: 30 }}
+                            open={open}
+                            // onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <AnimatedCard className='h-[500px] w-full'>
+                                <Box sx={{ height: "500px", width: "100%", bgcolor: "white", outline: 0, display: "flex", }}>
+                                    <div className='img-section min-w-[40%] h-full'>
+                                        <img className='h-full w-full object-cover' src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="" />
+                                    </div>
+                                    <div className='content  h-full w-full'>
+                                        <div className='w-full flex justify-end'> <Icon fontSize={40} icon={"basil:cross-solid"} onClick={handleClose} /> </div >
+                                        {/* stepper components */}
+                                        <BoardingStepper />
+
+                                    </div>
+
+                                </Box>
+                            </AnimatedCard>
+                        </Modal>
                     </div>
 
 
