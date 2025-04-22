@@ -74,7 +74,7 @@ function Header() {
                                         </div>
 
                                         <div className=' w-full items-center'>
-                                            <a href={toggle ? "#form" : " "}>
+                                            <a href={toggle? "#form" : " "}>
                                                 <button className='w-full p-2 min-2xl:py-2 text-lg min-2xl:text-2xl font-semibold rounded-lg text-white bg-green-700 hover:bg-green-950' onClick={() => setToggle(!toggle)}>Get Price</button>
                                             </a>
                                         </div>

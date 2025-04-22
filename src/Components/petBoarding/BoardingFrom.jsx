@@ -1,7 +1,10 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { Autocomplete, Avatar, Box, Button, Container, FormControlLabel, Paper, Radio, RadioGroup, TextField, Typography, Card, CardContent, ButtonBase, Modal } from '@mui/material'
 import React, { useState } from 'react'
-import { Map, Pets, CalendarToday, AccessTime } from "@mui/icons-material";
+import { Map, Pets, CalendarToday, AccessTime, Style } from "@mui/icons-material";
+import { AnimatedCard } from '../StyledComponents/Styled';
+import MYStepper from '../PetGroomingSteperComp/Stepper';
+import BoardingStepper from './BoardingStepper.';
 
 
 
@@ -10,50 +13,50 @@ import { Map, Pets, CalendarToday, AccessTime } from "@mui/icons-material";
 
 
 const Age = [
-    {label: '3 - 6 Months'},
-    {label: '6 Months - 1 Year'},
-    {label: '1 Year - 2 Year'},
-    {label: '2 Year - 3 Year'},
-    {label: '3 Year - 4 Year'},
-    {label: 'More Than 4 Year'},
+    { label: '3 - 6 Months' },
+    { label: '6 Months - 1 Year' },
+    { label: '1 Year - 2 Year' },
+    { label: '2 Year - 3 Year' },
+    { label: '3 Year - 4 Year' },
+    { label: 'More Than 4 Year' },
 ]
 
 
-const MyInput = ({ label = "", helperText = "", type =""  }) =>  {
+const MyInput = ({ label = "", helperText = "", type = "" }) => {
     return <TextField
-    label={label}
-    helperText={helperText}
-    type={type}
+        label={label}
+        helperText={helperText}
+        type={type}
 
-    InputLabelProps={{
-        className: "-mt-2",
-        sx:{fontSize: "1rem"},  // adjust lable font size
-        '& .MuiInputBase-input': {
-            color: 'green'
-        },
-        '& .Muifocused + .MuiFormhelpetText-root': {
-            color: 'blue'
-        },
-    }}
-    FormHelperTextProps={{
-        sx: { color: 'red' }   // helper text style
-    }}
-    inputProps={{
-        sx:{
-            backgroundColor: 'transperent',
-            fontSize: '1rem',
-            height: '40px',
-            padding: '0px',
-        }
-    }}
-    sx={{
-        my: 1.5,   // outer spacing
-        '& .MuiInputBase-input': {
-            color: 'green'
-        },'& .MuiInputLabel-formControl': {
-            padding: '0px'
-        },
-    }}
+        InputLabelProps={{
+            className: "-mt-2",
+            sx: { fontSize: "1rem" },  // adjust lable font size
+            '& .MuiInputBase-input': {
+                color: 'green'
+            },
+            '& .Muifocused + .MuiFormhelpetText-root': {
+                color: 'blue'
+            },
+        }}
+        FormHelperTextProps={{
+            sx: { color: 'red' }   // helper text style
+        }}
+        inputProps={{
+            sx: {
+                backgroundColor: 'transperent',
+                fontSize: '1rem',
+                height: '40px',
+                padding: '0px',
+            }
+        }}
+        sx={{
+            my: 1.5,   // outer spacing
+            '& .MuiInputBase-input': {
+                color: 'green'
+            }, '& .MuiInputLabel-formControl': {
+                padding: '0px'
+            },
+        }}
 
     >
     </TextField>
@@ -61,7 +64,7 @@ const MyInput = ({ label = "", helperText = "", type =""  }) =>  {
 
 
 function BoardingForm() {
-
+    const [open, setOpen] = useState(false);
     const [pet, setPet] = useState("Bella");
     const [pickup, setPickup] = useState("");
     const [dropoff, setDropoff] = useState("");
@@ -128,6 +131,15 @@ function BoardingForm() {
     }
     console.log("Value", value)
 
+
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div>
 
@@ -142,27 +154,27 @@ function BoardingForm() {
                         </div>
                         <div className=''>
                             <div className='px-5 flex justify-between w-full'>
-                               
+
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="First Name" variant="outlined" size='small'/>
+                                }} id="outlined-basic" label="First Name" variant="outlined" size='small' />
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="Last Name" variant="outlined" size='small'/>
+                                }} id="outlined-basic" label="Last Name" variant="outlined" size='small' />
                             </div>
                             <div className='p-5 flex justify-between w-full '>
                                 <TextField sx={{
-                            
-                                    width: 300,
-                                  
 
-                                }} id="outlined-basic" label="Email Address" variant="outlined" size='small'/>
-                                <TextField sx={{
-                                  
                                     width: 300,
-                                    
-                                    
-                                }} id="outlined-basic" type='number' label="Phone No." variant="outlined" size='small'/>
+
+
+                                }} id="outlined-basic" label="Email Address" variant="outlined" size='small' />
+                                <TextField sx={{
+
+                                    width: 300,
+
+
+                                }} id="outlined-basic" type='number' label="Phone No." variant="outlined" size='small' />
                             </div>
                         </div>
 
@@ -226,37 +238,60 @@ function BoardingForm() {
                         <div>
                             <div className='px-5 justify-between w-full flex gap-5'>
                                 <div className='flex gap-5'>
-                                <div>
-                                 <TextField sx={{
-                                   
-                                }} id="outlined-basic" label="Name Of Pet" variant="outlined" size='small'/>
-                                </div>
-                                <div>
-                                <Autocomplete
-                                    disablePortal
-                                    options={Age}
-                                   sx={{
-                                    minWidth : 200
-                                   }}
-                                    renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' />}
-                                />
-                                </div>
-                                
-                                <div>
-                                 <TextField sx={{
-                                    
-                                }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
-                                </div>
+                                    <div>
+                                        <TextField sx={{
+
+                                        }} id="outlined-basic" label="Name Of Pet" variant="outlined" size='small' />
+                                    </div>
+                                    <div>
+                                        <Autocomplete
+                                            disablePortal
+                                            options={Age}
+                                            sx={{
+                                                minWidth: 200
+                                            }}
+                                            renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' />}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <TextField sx={{
+
+                                        }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className='flex justify-end p-10'>
-                        <Button variant='contained'>Proceed</Button>
+                        <Button onClick={handleOpen}>Proceed</Button>
+                    </div>
+                    <div>
+                        <Modal sx={{ height: screen, display: 'flex', justifyContent: "center", alignItems: 'center', px: 30 }}
+                            open={open}
+                            // onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <AnimatedCard className='h-[500px] w-full'>
+                                <Box sx={{ height: "500px", width: "100%", bgcolor: "white", outline: 0, display: "flex", }}>
+                                    <div className='img-section min-w-[40%] h-full'>
+                                        <img className='h-full w-full object-cover' src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="" />
+                                    </div>
+                                    <div className='content  h-full w-full'>
+                                        <div className='w-full flex justify-end'> <Icon fontSize={40} icon={"basil:cross-solid"} onClick={handleClose} /> </div >
+                                        {/* stepper components */}
+                                        <BoardingStepper />
+
+                                    </div>
+
+                                </Box>
+                            </AnimatedCard>
+                        </Modal>
                     </div>
 
-            
+
 
 
                 </div>
