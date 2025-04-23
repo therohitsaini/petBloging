@@ -38,15 +38,18 @@ function Header() {
                                 <button onClick={(event) => changedata(event)} name="pet" value={'petbording'} className='px-5 p-2 max-sm:p-3 border-1 rounded-sm bg-white items-center flex gap-2 text-lg min-2xl:text-xl max-sm:text-sm  font-semibold'>
                                     <input onChange={(event) => changedata(event)} type="radio" name="pet" value={'petbording'} checked={select.pet == "petbording"} className='w-5 h-5 ' />
                                     Pet Boarding</button>
-                                <button onClick={(event) => changedata(event)} name="pet" value={'pettaxi'} className='px-5 p-2 max-sm:p-3 border-1 rounded-sm bg-white items-center flex gap-2 text-lg min-2xl:text-xl max-sm:text-sm font-semibold'>
+                                <Link to={"/pettaxi"}><button onClick={(event) => changedata(event)} name="pet" value={'pettaxi'} className='px-5 p-2 max-sm:p-3 border-1 rounded-sm bg-white items-center flex gap-2 text-lg min-2xl:text-xl max-sm:text-sm font-semibold'>
                                     <input onChange={(event) => changedata(event)} type="radio" name="pet" value={'pettaxi'} checked={select.pet == "pettaxi"} className='w-5 h-5' />
-                                    Pet Taxi</button>
+                                    Pet Taxi</button></Link>
+                                    <Link to={"/petgrooming"}><button onClick={(event) => changedata(event)} name="pet" value={'petgrooming'} className='px-5 p-2 max-sm:p-3 border-1 rounded-sm bg-white items-center flex gap-2 text-lg min-2xl:text-xl max-sm:text-sm font-semibold'>
+                                    <input onChange={(event) => changedata(event)} type="radio" name="pet" value={'petgrooming'} checked={select.pet == "petgrooming"} className='w-5 h-5' />
+                                    Pet Grooming</button></Link>
                             </div>
 
                         </div>
 
 
-                        {select.pet === "petbording" ?
+                        {/* {select.pet === "petbording" ? */}
                         
                             <div className='max-sm:flex max-sm:flex-col gap-3'>
                                 <div className=' rounded-lg flex max-sm:flex-col min-2xl:flex min-2xl:flex-col min-2xl:items-center gap-1 px-10  bg-white w-full'>
@@ -81,8 +84,9 @@ function Header() {
                                     </div>
                                 </div>
 
-                            </div> : <div> </div>
-                        }
+                            </div>
+                             {/* : <div> </div> */}
+                        {/* } */}
 
                         <div className=' w-full absolute -top-7 max-sm:-top-7 min-2xl:-top-8 px-35 max-sm:px-6 max-lg:px-7'>
 
@@ -91,7 +95,7 @@ function Header() {
                                     <p>I'm looking for Service for My : </p>
                                 </div>
                                 <div className='flex gap-3 items-center'>
-                                    <input type="checkbox" className='h-5 w-5 min-2xl:h-7 min-2xl:w-7' name="" id="" />
+                                    <input type="checkbox" className='h-5 w-5 min-2xl:h-7 min-2xl:w-7' name="" id="" checked/>
                                     <p>Cat</p>
                                 </div>
                             </div>

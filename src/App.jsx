@@ -15,6 +15,7 @@ import BlogCard from './Components/Pages/BlogCard';
 import Bloges from './Components/Bloges';
 import PetGrooming from './Components/Pages/PetGrooming';
 import PetBoarding from './Components/Pages/PetBoarding';
+import PetTaxi from './Components/Pages/PetTaxi';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path='/blogdetails' element={<BlogDetails />} />
           <Route path='/petgrooming' element={< PetGrooming />} />
           <Route path='/petboarding' element={< PetBoarding />} />
+          <Route path='/pettaxi' element={< PetTaxi />} />
 
         </Routes>
       </BrowserRouter>

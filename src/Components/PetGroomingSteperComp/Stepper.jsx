@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createContext } from 'react';
+import { createContext } from 'react';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -16,7 +16,7 @@ import CustomerInfo from './CustomerInfo';
 export const StepContext = createContext()
 
 export default function MYStepper() {
- 
+
 
 
   const theme = useTheme();
@@ -35,20 +35,20 @@ export default function MYStepper() {
   const steps = [
     {
       // label: 'Service Section',
-      component: <React.Fragment> <ServiceSection /> </React.Fragment>
+      component: <ServiceSection />
     },
     {
       // label: 'Create an ad group',
-      component: <React.Fragment> <AllServiceSecttion handleNext={handleNext} /> </React.Fragment>
+      component: <AllServiceSecttion />
 
     },
     {
       // label: 'Create an ad',
-      component: <React.Fragment> <Additional /> </React.Fragment>,
+      component: <Additional />
     },
     {
       // label: 'Create an ad',
-      component: <React.Fragment> < CustomerInfo /> </React.Fragment>,
+      component: < CustomerInfo />
     },
   ];
 
@@ -71,7 +71,7 @@ export default function MYStepper() {
       </Paper>
       <Box sx={{ height: 400, width: '100%', px: 2, }}>
 
-        <StepContext.Provider value={{handleNext}}>
+        <StepContext.Provider value={{ handleNext }}>
           {steps[activeStep].component}
         </StepContext.Provider>
 
@@ -86,22 +86,22 @@ export default function MYStepper() {
           <Button
             color='black'
             size="small"
-           
+
             variant='outlined'
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
             {/* { maxSteps.length < 2 ?? */}
-                Next 
-            
-                {theme.direction === 'rtl' ? (
-                  <KeyboardArrowLeft />
-                ) : (
-                  <KeyboardArrowRight />
-                )}
+            Next
 
-            
-          
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+
+
+
           </Button>
         }
         backButton={

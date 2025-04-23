@@ -10,8 +10,8 @@ function ServiceSection({ }) {
     const [hoverEffect, setHoverEffect] = useState(false)
     const [hoverEffectCat, setHoverEffectCat] = useState(false)
 
-    const { handleNext } = useContext(StepContext)
-
+    // const { handleNext } = useContext(StepContext)
+    const handleNext = () => { }
     const onMouse = () => {
         setHoverEffect(true)
 

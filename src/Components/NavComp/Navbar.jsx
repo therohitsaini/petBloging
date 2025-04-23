@@ -12,7 +12,13 @@ function Navbar() {
    
         <header className="header w-full sticky top-0 px-15 bg-slate-100 max-sm:px-2 z-50  ">
           <nav className="navbar flex justify-between items-center    p-2 py-4  border-b border-slate-300 max-sm:py-4 text-black">
-            <h1 className="font-semibold text-2xl flex items-center gap-1 "><Icon width={42} icon={"solar:cat-outline"} className='text-4xl' /> <Link to={"/home"}>Petpy.in </Link> </h1>
+            <div className='flex gap-2 items-center'>
+            <p className="h-15 w-15 "><img className='h-full w-full object-cover' src={`${import.meta.env.BASE_URL}logo.png`} alt="" /> </p>
+            <div className='leading-none'>
+              <p className='text-md font-bold w-25'>TOE BEANS APARTMENT</p>
+              {/* <p className='text-lg font-semibold font-serif m-0 p-0'>APARTMENT</p> */}
+            </div>
+            </div>
             <ul className="un-order-list flex gap-10 items-center  max-sm:hidden font-medium text-[15px]" >
             <li><Link  to={"/"}>HOME</Link></li>
               <li><Link  to={"/petfinding"}>ABOUT</Link></li>

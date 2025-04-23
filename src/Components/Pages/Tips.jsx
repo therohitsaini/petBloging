@@ -7,25 +7,30 @@ function Tips() {
         {
             "icon": "ic:sharp-tips-and-updates",
             "headline": " Pet Boarding Tips –",
-            "descriptions": "Learn how to prepare your furry friend for a comfortable stay at our facility.Get expert advice on keeping your pet happy and healthy."
+            "descriptions": "Learn how to prepare your furry friend for a comfortable stay at our facility.Get expert advice on keeping your pet happy and healthy.",
+            "color": "text-yellow-600"    
         },
         {
             "icon": "healthicons:health",
             "headline": "  Health & Wellness –",
-            "descriptions": "Get expert advice on keeping your pet happy and healthy. Get expert advice on keeping your pet happy and healthy."
+            "descriptions": "Get expert advice on keeping your pet happy and healthy. Get expert advice on keeping your pet happy and healthy.",
+            "color": "text-green-600"
         }, {
             "icon": "mynaui:funny-circle-solid",
             "headline": " Fun Activities –",
-            "descriptions": "Discover the engaging activities we offer to make your pet’s stay enjoyable. Get expert advice on keeping your pet happy and healthy.."
+            "descriptions": "Discover the engaging activities we offer to make your pet’s stay enjoyable. Get expert advice on keeping your pet happy and healthy..",
+            "color": "text-orange-600"
         },
         {
             "icon": "mdi:customer-service",
             "headline": "  Customer Storie –",
-            "descriptions": "Read heartwarming tales from pet parents who trust us with their beloved companions. Get expert advice on keeping your pet happy and healthy."
+            "descriptions": "Read heartwarming tales from pet parents who trust us with their beloved companions. Get expert advice on keeping your pet happy and healthy.",
+            "color": "text-blue-600"
         }, {
-            "icon": "ic:sharp-tips-and-updates",
+            "icon": "bxs:offer",
             "headline": " Special Offers & Update –",
-            "descriptions": "Stay in the loop about promotions, new services, and seasonal deals! Get expert advice on keeping your pet happy and healthy."
+            "descriptions": "Stay in the loop about promotions, new services, and seasonal deals! Get expert advice on keeping your pet happy and healthy.",
+            "color": "text-red-600"
         },
     ];
 
@@ -43,7 +48,7 @@ function Tips() {
                                 return (
                                     <section key={index} className='flex items-center gap-3'>
                                         <span className='text-3xl  font-semibold'>
-                                            <Icon width={30} className={`${index.length === 1 ? "text-green-500" : "text-yellow-500 "}`} icon={data_inner.icon} />
+                                            <Icon width={30} className={data_inner.color} icon={data_inner.icon} />
                                         </span>
                                         <div className='flex flex-col '>
                                             <span className='text-lg font-semibold min-2xl:text-2xl'>

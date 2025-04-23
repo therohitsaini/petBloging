@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createContext } from 'react';
+import { createContext } from 'react';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -7,17 +7,25 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import AddBoardingService from './AddBoardingService';
+import AdditionalService from './AdditionalService';
+import { useState } from 'react';
+import ServiceSection from '../PetGroomingSteperComp/ServiceSection';
+import AllServiceSection from '../PetGroomingSteperComp/AllServiceSecttion';
+import Additional from '../PetGroomingSteperComp/Additional';
+import CustomerInfo from '../PetGroomingSteperComp/CustomerInfo';
+import PetTaxiCard from '../petTaxi/PetTaxiCard';
 
 
 export const StepContext = createContext()
 
 export default function BoardingStepper() {
- 
+
 
 
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const [isPetTaxi, setIsPetTaxi] = useState(true)
+  const [isPetGrooming, setIsPetGrooming] = useState(true)
 
 
   const handleNext = () => {
@@ -28,26 +36,58 @@ export default function BoardingStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  const petProps = {
+    handleNext,
+    isPetGrooming, isPetTaxi, setIsPetGrooming, setIsPetTaxi     // props ko object me bej skte hai 
+  }
 
-  const steps = [
-    {
-      // label: 'Service Section',
-      component: <React.Fragment><AddBoardingService /></React.Fragment>
-    },
-    {
-      // label: 'Create an ad group',
-      component: <React.Fragment> </React.Fragment>
+  const generateExtraSteps = (isPetGrooming, isPetTaxi) => {
+    let steps = [
+      {
+        // label: 'choose service grooming or taxi',
+        component: <AdditionalService />
+      },
+    ]
 
-    },
-    {
-      // label: 'Create an ad',
-      component: <React.Fragment>  </React.Fragment>,
-    },
-    {
-      // label: 'Create an ad',
-      component: <React.Fragment></React.Fragment>,
-    },
-  ];
+    let groomingSteps = []
+
+    let taxiSteps = []
+
+    if (isPetGrooming) {
+      groomingSteps = [
+        {
+          component: <ServiceSection />
+        },
+        {
+
+          component: <AllServiceSection />
+
+        },
+        {
+          component: <Additional />
+        },
+        {
+
+          component: < CustomerInfo />
+        },
+      ]
+
+    }
+
+    if (isPetTaxi) {
+      taxiSteps = [
+        {
+          component: <PetTaxiCard />
+        },
+      ]
+    }
+
+    return [...steps, ...taxiSteps, ...groomingSteps]
+
+  }
+
+  const steps = generateExtraSteps(isPetGrooming, isPetTaxi)
+
 
   const maxSteps = steps.length;
 
@@ -68,9 +108,9 @@ export default function BoardingStepper() {
       </Paper>
       <Box sx={{ height: 390, width: '100%', px: 2, }}>
 
-        {/* <StepContext.Provider handleNext={handleNext}> */}
+        <StepContext.Provider value={petProps}>
           {steps[activeStep].component}
-        {/* </StepContext.Provider> */}
+        </StepContext.Provider>
 
       </Box>
       <MobileStepper
