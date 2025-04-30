@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { Autocomplete, Avatar, Box, Button, Container, FormControlLabel, Paper, Radio, RadioGroup, TextField, Typography, Card, CardContent, ButtonBase, Modal } from '@mui/material'
 import React, { useState } from 'react'
-import { Map, Pets, CalendarToday, AccessTime, Style } from "@mui/icons-material";
+import { Map, Pets, CalendarToday, AccessTime, Style, Fullscreen } from "@mui/icons-material";
 import { AnimatedCard } from '../StyledComponents/Styled';
 import MYStepper from '../PetGroomingSteperComp/Stepper';
 import BoardingStepper from './BoardingStepper.';
@@ -232,7 +232,7 @@ function BoardingForm() {
                             <h1 className='text-xl font-semibold px-2'>Pets Details</h1>
                         </div>
                         <div>
-                            <div className='px-5 justify-between w-full flex gap-5'>
+                            <div className='px-5 justify-between w-full flex flex-col gap-5'>
                                 <div className='flex gap-5'>
                                     <div>
                                         <TextField sx={{
@@ -254,6 +254,11 @@ function BoardingForm() {
                                         <TextField sx={{
 
                                         }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className='w-full pr-9'>
+                                       <textarea type="text" placeholder='Type Your Text' className='border-1 border-gray-400 rounded-md w-full p-2' rows={3} />
                                     </div>
                                 </div>
                             </div>

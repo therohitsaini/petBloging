@@ -115,11 +115,10 @@ function PetGrooming() {
                             })
                         }
 
+                        <div className='sticky z-100'>
                         <Modal sx={{ height: screen, display: 'flex', justifyContent: "center", alignItems: 'center', px: 30 }}
                             open={modal}
                             // onClose={handleClose}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
                         >
                             <AnimatedCard className='h-[500px] w-full'>
                             <Box sx={{ height: "500px", width: "100%", bgcolor: "white", outline: 0, display: "flex", }}>
@@ -136,6 +135,7 @@ function PetGrooming() {
                             </Box>
                             </AnimatedCard>
                         </Modal>
+                        </div>
 
                     </div>
                 </div>
