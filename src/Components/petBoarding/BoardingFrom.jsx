@@ -5,6 +5,9 @@ import { Map, Pets, CalendarToday, AccessTime, Style, Fullscreen } from "@mui/ic
 import { AnimatedCard } from '../StyledComponents/Styled';
 import MYStepper from '../PetGroomingSteperComp/Stepper';
 import BoardingStepper from './BoardingStepper.';
+import { useDispatch, useSelector } from 'react-redux';
+import { setBoardingDetails, setOwnerDetails, setPetDetails } from '../../store/petServices/actions';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -60,13 +63,19 @@ const MyInput = ({ label = "", helperText = "", type = "" }) => {
 
 
 function BoardingForm() {
+    const ownerFormData = useSelector((state) => state.PetReducer.ownerDetails)
+    const petFormData = useSelector((state) => state.PetReducer.petDetails)
+    const boardingFormData = useSelector((state) => state.PetReducer.boardingDetails)
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [open, setOpen] = useState(false);
     const [pet, setPet] = useState("Bella");
     const [pickup, setPickup] = useState("");
     const [dropoff, setDropoff] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-
+    // const [formData, setFormData] = useState({})
 
     const [value, setValue] = useState("male")
     const [schedule, setSchedule] = useState("")
@@ -125,8 +134,28 @@ function BoardingForm() {
     const handleChangeGender = (e) => {
         setValue(e.target.value)
     }
-    console.log("Value", value)
+    // console.log("Value", value)
 
+    const handleOwnerDetailsChange = (e) => {
+        const { name, value } = e.target
+        console.log("{ name, value }", { name, value })
+        dispatch(setOwnerDetails({ ...ownerFormData, ...{ [name]: value } }))
+    }
+    console.log("ownerFormData", ownerFormData)
+
+    const handlePetDetailsChange = (e) => {
+        const { name, value } = e.target
+        console.log("{ name, value }", { name, value })
+        dispatch(setPetDetails({ ...petFormData, ...{ [name]: value } }))
+    }
+    console.log("petFormData", petFormData)
+
+    const handleBoardingDetailsChange = (e) => {
+        const { name, value } = e.target
+        console.log("{ name, value }", { name, value })
+        dispatch(setBoardingDetails({ ...boardingFormData, ...{ [name]: value } }))
+    }
+    console.log("boardingFormData", boardingFormData)
 
 
     const handleOpen = () => {
@@ -138,9 +167,11 @@ function BoardingForm() {
 
     return (
         <div>
-
+            <Button onClick={() => navigate(-1)}>Go Back</Button>
             <div className=' border-green-800 w-full flex justify-between'>
+
                 <div className='First w-full'>
+
                     <div className='logo w-full flex justify-center p-2'>
                         <h1 className="font-semibold text-2xl flex items-center gap-1 "><Icon width={42} icon={"solar:cat-outline"} className='text-4xl' /> Petpy.in  </h1>
                     </div>
@@ -153,10 +184,11 @@ function BoardingForm() {
 
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="First Name" variant="outlined" size='small' />
+                                }} value={ownerFormData.first_name} onChange={handleOwnerDetailsChange} name="first_name" label="First Name" variant="outlined" size='small' />
+
                                 <TextField sx={{
                                     width: 300,
-                                }} id="outlined-basic" label="Last Name" variant="outlined" size='small' />
+                                }} value={ownerFormData.last_name} onChange={handleOwnerDetailsChange} name="last_namae" label="Last Name" variant="outlined" size='small' />
                             </div>
                             <div className='p-5 flex justify-between w-full '>
                                 <TextField sx={{
@@ -164,13 +196,13 @@ function BoardingForm() {
                                     width: 300,
 
 
-                                }} id="outlined-basic" label="Email Address" variant="outlined" size='small' />
+                                }} value={ownerFormData.email_address} onChange={handleOwnerDetailsChange} name="email_address" label="Email Address" variant="outlined" size='small' />
                                 <TextField sx={{
 
                                     width: 300,
 
 
-                                }} id="outlined-basic" type='number' label="Phone No." variant="outlined" size='small' />
+                                }} value={ownerFormData.phone_no} onChange={handleOwnerDetailsChange} name="phone_no" type='number' label="Phone No." variant="outlined" size='small' />
                             </div>
                         </div>
 
@@ -185,7 +217,7 @@ function BoardingForm() {
                                     <label className='text-md font-semibold w-10 ' htmlFor="">FROM</label>
                                 </div>
                                 <div className='w-full'>
-                                    <input type="text" className='w-full p-3 outline-0' placeholder='Serach Pickup location' />
+                                    <input value={boardingFormData.from_address} onChange={handleBoardingDetailsChange} name="from_address" type="text" className='w-full p-3 outline-0' placeholder='Serach Pickup location' />
                                 </div>
                             </div>
                         </div>
@@ -209,14 +241,14 @@ function BoardingForm() {
                                         <label className='text-md font-sans w-10 font-semibold' htmlFor="">DEPART</label>
                                     </div>
                                     <div className='w-full flex'>
-                                        <select className='w-full p-3 outline-0' name="" id="">
+                                        <select value={boardingFormData.date} onChange={handleBoardingDetailsChange}  className='w-full p-3 outline-0' name="from_date" id="">
                                             {dates.map((date) => {
                                                 return (
                                                     <option className='p-3 text-2xl'>{date}</option>
                                                 )
                                             })}
                                         </select>
-                                        <select className='w-full p-3 outline-0' name="" id="">
+                                        <select value={boardingFormData.from_time} onChange={handleBoardingDetailsChange}  className='w-full p-3 outline-0' name="from_time" id="">
                                             {timeSlots.map((time) => (
                                                 <option value={time} key={time}>{time}</option>
                                             ))}
@@ -237,7 +269,7 @@ function BoardingForm() {
                                     <div>
                                         <TextField sx={{
 
-                                        }} id="outlined-basic" label="Name Of Pet" variant="outlined" size='small' />
+                                        }} value={petFormData.pet_name} onChange={handlePetDetailsChange} name="pet_name" label="Name Of Pet" variant="outlined" size='small' />
                                     </div>
                                     <div>
                                         <Autocomplete
@@ -246,19 +278,19 @@ function BoardingForm() {
                                             sx={{
                                                 minWidth: 200
                                             }}
-                                            renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' />}
+                                            renderInput={(params) => <TextField {...params} label="Age Of Your Pet" size='small' value={petFormData.pet_age} onChange={handlePetDetailsChange} name="pet_age" />}
                                         />
                                     </div>
 
                                     <div>
                                         <TextField sx={{
 
-                                        }} id="outlined-basic" label="Breed Of Your Pet" variant="outlined" size='small' />
+                                        }} value={petFormData.pet_breed} onChange={handlePetDetailsChange} name="pet_breed" label="Breed Of Your Pet" variant="outlined" size='small' />
                                     </div>
                                 </div>
                                 <div>
                                     <div className='w-full pr-9'>
-                                       <textarea type="text" placeholder='Type Your Text' className='border-1 border-gray-400 rounded-md w-full p-2' rows={3} />
+                                        <textarea value={petFormData.pet_description} onChange={handlePetDetailsChange} name="pet_description" type="text" placeholder='Type Your Text' className='border-1 border-gray-400 rounded-md w-full p-2' rows={3} />
                                     </div>
                                 </div>
                             </div>
