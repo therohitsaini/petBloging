@@ -16,7 +16,7 @@ function SignIn() {
         // console.log(object)
 
         try {
-            const url = "http://localhost:8000/api/login/"
+            const url = `${import.meta.env.VITE_APP_BACKEND_URL}/login/`
             const fetchData = await fetch(url, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },

@@ -17,7 +17,7 @@ const SignUpSubmitHanlder = async (e) =>{
         password : password.current.value
     }
     try{
-        const url = 'http://localhost:8000/api/registration-api/'
+        const url = `${import.meta.env.VITE_APP_BACKEND_URL}/registration-api/`
         const fetchData = await fetch(url,{
             method : "POST",
             headers : {"Content-type" : "application/json"},
